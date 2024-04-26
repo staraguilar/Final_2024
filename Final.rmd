@@ -17,15 +17,15 @@ require(tigerstats)
 require(forcats)
 OldData <-read.csv(file="final.csv",header=TRUE)
 #recode to remove the annoying "X" from the dataframe
-FinalData <- OldData %>% mutate(infected = recode(infected, aids = "covid", none = "OK" )) %>% select(-one_of("X"))
+FinalData <- OldData %>% mutate(infected = recode(infected, covid19 = "covid", OK = "OK" )) %>% select(-one_of("X"))
 FinalData <- FinalData %>%
 mutate(across(where(is.character), as.factor))
 FinalData$treatment <- relevel(FinalData$treatment,ref="placebo")
 #FinalData$infected <- relevel(FinalData$infected,ref="OK")
-Males = filter(FinalData, sex =="Males")
-Females = filter(FinalData, sex =="Females")
-LGBTQ = filter(FinalData, LGBTQ =="LGBTQ")
-DrugUser = filter(FinalData, DrugUser =="yes")
+Males = filter(FinalData, sex =="M")
+Females = filter(FinalData, sex =="F")
+LGBTQ = filter(FinalData, LGBTQ =="gay")
+Druggies = filter(FinalData, DrugUser =="yes")
 ```
 
 
@@ -38,9 +38,18 @@ A new  preventative vaccine (covid921) is under test in clinical trials. Given t
 
 # Code block modification 
 
-I made some changes to the block of code on line 14, I used Tay's example as an example for what changes to make. I separated each variable into its own line and changed its name to Males, Females, LGBTQ and DrugUser(because druggies was not found). This allowed for all 4 groups to pop up in the environment panel. 
+I made some changes to the block of code on line 14, I used Tay's example as an example for what changes to make. I separated each variable into its own line and changed its name to Males, Females, LGBTQ and DrugUser(because druggies was not found). I also changed some formatting to seperate the people who got covid and the people who did not get covid. This allowed for all 4 groups to pop up in the environment panel. 
 
 ## Males
+
+
+
+
+
+
+### Inferential 
+
+
 
 
 
