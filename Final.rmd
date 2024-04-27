@@ -249,7 +249,10 @@ hi=(Druggiesfish$conf.int[2]/(Druggiesfish$conf.int[2] +1))*100
 options(digits=2)
 ```
 
-Above is the effectiveness for the covid-19 vaccine for Druggies. If the effectiveness is above 50% that means that the vaccine is effective. Based on the interval seen above, we cn conclude that the vaccine is not effective in protecting Druggies from getting covid-19.The odds ratio is approximately how effective the vaccine is. The odds ratio for the Druggies is 11%.
+  
+Above is the effectiveness for the covid-19 vaccine for Druggies. If the effectiveness is above 50% that means that the vaccine is effective. Based on the interval seen above, we can conclude that the vaccine is not effective in protecting Druggies from getting covid-19.The odds ratio is approximately how effective the vaccine is. The odds ratio for the Druggies is 11%.
 
 
 # Overall Results and Conclusions
+
+The covid-19 vaccine was not effective for both people who are LGBTQ and Druggies, they both got an effectiveness percentage under 50% which means that the vaccien was not effective.However, the covid-19 vaccine was effective for both Males and Females they both got an effectiveness score over 50%. 
