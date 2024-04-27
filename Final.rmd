@@ -151,7 +151,54 @@ Above is the effectiveness for the covid-19 vaccine for Females. If the effectiv
 
 ## LGBTQ
 
+```{r}
+dd2 <- LGBTQ %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+This plot shows the amount of LGBTQ people who got Covid after getting the vaccine and taking a placebo. 
+
+### Numerical results
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=LGBTQ)
+rowPerc(table1)
+colPerc(table1)
+```
+The plot and numerical results shows that 15% got covid after taking the placebo and only 85% got covid after getting the vaccine. A significantly larger percentage of those who got the vaccine  contracted covid-19 than those who took the placebo. The vaccine appears to provide no protection against Covid-19.
+
+### Inferential 
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+LGBTQfish <- fisher.test(table1)
+LGBTQfish
+```
+
+These are the  results of the output of the Fisher's Exact test. The p-value is 7e-08. The odd ratio above illustrates a ratio of 0.18. 
+
+```{r}
+effect <- LGBTQfish$p.value/(LGBTQfish$p.value +1)
+effectivenessLGBTQ = LGBTQfish$estimate/(LGBTQfish$estimate +1)*100
+print(effectivenessLGBTQ)
+```
+```{r}
+low=(LGBTQfish$conf.int[1]/(LGBTQfish$conf.int[1] +1))*100
+hi=(LGBTQfish$conf.int[2]/(LGBTQfish$conf.int[2] +1))*100
+options(digits=2)
+```
+
+Above is the effectiveness for the covid-19 vaccine for LGBTQ. If the effectiveness is above 50% that means that the vaccine is effective. Based on the interval seen above, we cn conclude that the vaccine is not effective in protecting LGBTQ from getting covid-19.The odds ratio is approximately how effective the vaccine is. The odds ratio for the LGBTQ is 15%.
 
 ## Druggies
 
