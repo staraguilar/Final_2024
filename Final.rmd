@@ -99,7 +99,55 @@ options(digits=2)
 Above is the effectiveness for the covid-19 vaccine for guys(males). If the effectiveness is above 50% that means that the vaccine is effective. Based on the interval seen above, we cn conclude that the vaccine is effective in protecting Males from getting covid-19.The odds ratio is approximately how effective the vaccine is. The odds ratio for the Males is 69.15981%
 
 ## Females
+```{r}
+dd2 <- Females %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+This plot shows the amount of Females who got Covid after getting the vaccine and taking a placebo. 
+
+### Numerical results
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=Females)
+rowPerc(table1)
+colPerc(table1)
+```
+
+The plot and numerical resulsts shows that 60% got covid after taking the placebo and only 40% got covid after getting the vaccine. A significantly larger percentage of those who took the placebo  contracted covid-19 than those who got the vaccine. The vaccine appears to provide more protection against Covid-19.
+
+### Inferential 
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+Femalesfish <- fisher.test(table1)
+Femalesfish
+```
+
+These are the  results of the output of the Fisher's Exact test. The p-value is 3e-04. The null hypothesis predicted that the deaths related to covid-19 are independent of sex. Since it is clear that sex does play a role in the death rate of individuals, the alternative hypothesis, that there is a correlation between covid-19 deaths and sex, is the favorable option.The odd ratio above illustrates a ratio of 1.5. 
+
+```{r}
+effect <- Femalesfish$p.value/(Femalesfish$p.value +1)
+effectivenessFemales = Femalesfish$estimate/(Femalesfish$estimate +1)*100
+print(effectivenessFemales)
+```
+```{r}
+low=(Femalesfish$conf.int[1]/(Femalesfish$conf.int[1] +1))*100
+hi=(Femalesfish$conf.int[2]/(Femalesfish$conf.int[2] +1))*100
+options(digits=2)
+```
+
+Above is the effectiveness for the covid-19 vaccine for Females. If the effectiveness is above 50% that means that the vaccine is effective. Based on the interval seen above, we cn conclude that the vaccine is effective in protecting Femaales from getting covid-19.The odds ratio is approximately how effective the vaccine is. The odds ratio for the Females is 60%.
 
 ## LGBTQ
 
