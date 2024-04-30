@@ -157,7 +157,8 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
-The plot and numerical resulsts shows that 60% got covid after taking the placebo and only 40% got covid after getting the vaccine. A significantly larger percentage of those who took the placebo  contracted covid-19 than those who got the vaccine. The vaccine appears to provide more protection against Covid-19.
+The plot and numerical results shows that 60% of feamles got covid after taking the placebo and only 40% of females got covid after getting the vaccine. A significantly larger percentage of those who took the placebo  contracted covid-19 than those who got the vaccine. The vaccine appears to provide more protection against Covid-19.The odds of getting covid-19 while taking the vaccine is 1.5 for Females. The Females that took the vaccine were 1.5 times less likely to get covid-19 than those taking the placebo.
+
 
 ### Inferential 
 
