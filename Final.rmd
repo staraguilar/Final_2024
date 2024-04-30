@@ -62,6 +62,17 @@ basicCC + geom_bar(stat="identity", position = "dodge")
 
 
 This plot shows the amount of males who got Covid after getting the vaccine and taking a placebo. 
+
+The plot above shows that 30% of the people that took the vaccine covid-19, while 69% of the people taking the placebo contracted covid-19.  A substantially higher percentage of people who took the placebo contracted covid-19 versus those who got the vaccine. The vaccine appears to be effective in protection against covid-19. The odds of not getting covid-19 while taking the vaccine is 2.25:1. The men that took the vaccine were 2.25 times less likely to get covid-19 than those taking the placebo.
+
+
+There are two plots. In first plot,the x-axis represents infected, whether the participants were infected with covid-19 or they were not. The y-axis represents the count, or number of people that got covid-19 or not.
+In the second plot, the one above, The The left two bars of the graph are all the people that got covid-19. The x-axis represents whether a person got covid-19 or not. The y-axis, however, instead of representing the number of people who got covid-19, now represents the percentage of people that got covid-19 after taking the the placebo or taking the Vaccine. 
+
+
+The codes that  create this plot start with the code block beginning with dd2. dd2 can be seen in the environment pane and if inspected contains 4 variables.These variables include infected, treatment, count, and percent(stands for percent). The second group of codes is called the basicC. BasicC can also be seen in the environment pane and appears to contain a list of 9 variables. This information creates the first plot. The basicCC is the last bunch of codes and is also in the files pane. It also contains 9 variables and helps to create the percentage plot, the second plot. I used Taylor's example and changed the code "guys" to "Males" to match up with my data. 
+
+
   
 ### Numerical results
 
