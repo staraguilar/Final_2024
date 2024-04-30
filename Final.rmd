@@ -94,7 +94,13 @@ Malesfish
 ```
 
 
-These are the  results of the output of the Fisher's Exact test. The p-value is 1.098e-13. The null hypothesis predicted that the deaths related to covid-19 are independent of sex. Since it is clear that sex does play a role in the death rate of individuals, the alternative hypothesis, that there is a correlation between covid-19 deaths and sex, is the favorable option.The odd ratio above illustrates a ratio of 2.242422. 
+The information to play close attention to among all of these results is the output of the Fisher's Exact test. The p-value displayed above is extremely small at 1.098e-13. This is an extremely small number. seeing this number means that these results are not likely to occur by chance.
+
+
+
+The null hypothesis predicted that the deaths related to covid-19 are independent of sex. Since it is clear that sex does play a role in the death rate of individuals, the alternative hypothesis, that there is a correlation between covid-19 deaths and sex, is the favorable option.
+
+The odd ratio above illustrates a ratio of  2.242522. the Males(men) who received the vaccine were 2.24 times less to get covid-19 than those who received the placebo. 
 
 
 ```{r}
