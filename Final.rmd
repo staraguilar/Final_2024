@@ -81,7 +81,8 @@ table1 <- xtabs(~infected + treatment, data=Males)
 rowPerc(table1)
 colPerc(table1)
 ```
-The plot and numerical resulsts shows that 69% got covid after taking the placebo and only 30% got covid after getting the vaccine. A significantly larger percentage of those who took the placebo  contracted covid-19 than those who got the vaccine. The vaccine appears to provide more protection against Covid-19.
+The plot and numerical results shows that 69% of Males got covid after taking the placebo and only 30% got covid after getting the vaccine. A significantly larger percentage of those who took the placebo  contracted covid-19 than those who got the vaccine. The vaccine appears to provide more protection against Covid-19.The odds of not getting covid-19 while taking the vaccine is 2.25:1. The Males that took the vaccine were 2.25 times less likely to get covid-19 than those taking the placebo.
+
 
 ### Inferential 
 
