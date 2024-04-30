@@ -108,13 +108,18 @@ effect <- Malesfish$p.value/(Malesfish$p.value +1)
 effectivenessMales = Malesfish$estimate/(Malesfish$estimate +1)*100
 print(effectivenessMales)
 ```
+
 ```{r}
 low=(Malesfish$conf.int[1]/(Malesfish$conf.int[1] +1))*100
 hi=(Malesfish$conf.int[2]/(Malesfish$conf.int[2] +1))*100
 options(digits=2)
 ```
 
-Above is the effectiveness for the covid-19 vaccine for guys(males). If the effectiveness is above 50% that means that the vaccine is effective. Based on the interval seen above, we cn conclude that the vaccine is effective in protecting Males from getting covid-19.The odds ratio is approximately how effective the vaccine is. The odds ratio for the Males is 69.15981%
+## Effectiveness Confidence Interval `r low`  to `r hi`
+
+Above is the effectiveness for the covid-19 vaccine for guys(males). If the effectiveness is above 50% that means that the vaccine is effective. Based on the interval seen above, we can conclude that the vaccine is effective in protecting Males from getting covid-19.
+
+The odds ratio is approximately how effective the vaccine is. The odds ratio for the Males is 69.15981%
 
 ## Females
 ```{r}
@@ -132,6 +137,17 @@ basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 This plot shows the amount of Females who got Covid after getting the vaccine and taking a placebo. 
+
+In this plot, contrary to the previous, it appears that more people who were only given the placebo contracted covid-19. Only approximately 40% of the individuals who were given the vaccine were reported to have contracted covid-19. That means around 60% of the people that got covid-19 were the individuals that only received the placebo.The odds of getting covid-19 while taking the vaccine is 1.5. The gals that took the vaccine were 1.5 times  less likely to get covid-19 than those taking the placebo.
+
+
+There are two plots. In first plot,the x-axis represents infected, whether the participants were infected with covid-19 or they were not. The y-axis represents the count, or number of people that got covid-19 or not.
+In the second plot, the one above, The The left two bars of the graph are all the people that got covid-19. The x-axis represents whether a person got covid-19 or not. The y-axis, however, instead of representing the number of people who got covid-19, now represents the percentage of people that got covid-19 after taking the the placebo or taking the Vaccine. 
+
+
+
+The codes that  create this plot start with the code block beginning with dd2. dd2 can be seen in the environment pane and if inspected contains 4 variables.These variables include infected, treatment, count, and prcent(stands for percent). The second group of codes is called the basicC. BasicC can also be seen in the environment pane and appears to contain a list of 9 variables. This information creates the first plot. The basicCC is the last bunch of codes and is also in the files pane. It also contains 9 variables and helps to create the percentage plot, the second plot.
+
 
 ### Numerical results
 
