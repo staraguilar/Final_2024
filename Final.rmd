@@ -169,7 +169,12 @@ Femalesfish <- fisher.test(table1)
 Femalesfish
 ```
 
-These are the  results of the output of the Fisher's Exact test. The p-value is 3e-04. The null hypothesis predicted that the deaths related to covid-19 are independent of sex. Since it is clear that sex does play a role in the death rate of individuals, the alternative hypothesis, that there is a correlation between covid-19 deaths and sex, is the favorable option.The odd ratio above illustrates a ratio of 1.5. 
+The information to play close attention to among all of these results is the output of the Fisher's Exact test. The p-value displayed above is extremely small at 3e-04. This is an extremely tiny number. seeing this number means that these results are not likely to occur by chance and so the null hypothesis can be rejected in favor of the alternative.
+
+
+The Fishers's Exact Test illustrates that the odds ratio is 1.5.
+Females(Women) who got the vaccine were about 1.5 times less likely to get covid-19 than women that only took the placebo.
+
 
 ```{r}
 effect <- Femalesfish$p.value/(Femalesfish$p.value +1)
